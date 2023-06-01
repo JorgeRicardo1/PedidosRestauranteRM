@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PedidosRestaurante.Views.CategoriasViewTabbed.Mesas" 
+             BackgroundColor="{StaticResource AppBackgroundColor}"
+             Title="Mesas"
+             IconImageSource="tablellena.png"
+             xmlns:Components="clr-namespace:PedidosRestaurante.Components">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Components:HeaderCategorias x:Name="head"  Grid.Row="0" Mesasocupadas="{Binding Mesasocupadas}" Mesaslibres="{Binding Mesaslibres}"/>
+            <ActivityIndicator x:Name="Activiti_indicator"/>
+            <RefreshView Grid.Row="1" HorizontalOptions="Center" x:Name="refreshing" Refreshing="RefreshView_Refreshing" >
+                <CollectionView x:Name="lis12" ItemsSource="{Binding Mesas}" SelectionMode="None" ItemsLayout="VerticalGrid, 3" HorizontalOptions="Center">
+                    <CollectionView.ItemTemplate  >
+                        <DataTemplate >
+                            <Grid Padding="5,3,5,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="10" />
+                                </Grid.RowDefinitions>                                
+                                <Image Source="{Binding Image}" Grid.Row="0" />
+                                <Label Text="{Binding Mes_numero}" FontSize="28" Grid.Row="0" 
+                                       FontAttributes="Bold" TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                                <Button x:Name="Btn_selectmesa" BackgroundColor="Transparent"  CommandParameter="{Binding .}"  Grid.Row="0" Clicked="Btn_selectmesa_Clicked"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

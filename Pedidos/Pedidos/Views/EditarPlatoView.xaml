@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PedidosRestaurante.Views.EditarPlatoView"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             BackgroundColor="{StaticResource AppBackgroundColor}">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Frame Padding="0" BackgroundColor="{StaticResource FrameColor}" Opacity="0.6">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                            <ColumnDefinition Width="0.2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button  Grid.Column="0" ImageSource="flechas.png" BackgroundColor="Transparent" />
+                        <Label Grid.Column="1" Text="Editar Plato" HorizontalOptions="Center" 
+                               VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <ListView x:Name="Listascombinados"
+                  BackgroundColor="{StaticResource AppBackgroundColor}"
+                  HasUnevenRows = "true"
+                  ItemTapped = "Listascombinados_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout BackgroundColor="{StaticResource Selectorcolor}"  Orientation="Horizontal" Padding="16">
+                                        <Label   Text="{Binding Articulonombre}" FontAttributes="Bold" TextColor="White" FontSize="15" Margin="0,16,0,0"/>
+                                    </StackLayout>
+                                    <StackLayout Margin="10,0,10,0" HeightRequest="200" Orientation="Horizontal"   IsVisible="{Binding IsVisible}" >
+                                        <CollectionView  ItemsSource="{Binding Articuloscombinados}"  >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width=".6*"/>
+                                                            <ColumnDefinition Width=".2*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <input:CheckBox Text="{Binding Ananomb}" TextColor="White" IsChecked="{Binding Ischecked}" Grid.Column="0" 
+                                                                        BindingContext="{Binding .}" 
+                                                                        CheckChanged="CheckBox_CheckChanged"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button x:Name="BtnGuardar" Grid.Row="0" Clicked="BtnGuardar_Clicked" ImageSource="diskette.png"  BorderColor="Transparent" 
+                    BackgroundColor="Transparent" 
+                     HorizontalOptions="Start" 
+                    WidthRequest="50" HeightRequest="50" Margin="10,0,20,22" 
+                    VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PedidosRestaurante.Components.HeaderCategorias"
+             x:Name="this">
+    <ContentView.Content BindingContext="{x:Reference this}">
+        <Frame CornerRadius="10" Padding="5,0,0,5"  Margin="5,5" BackgroundColor="{StaticResource FrameColor}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Ocupadas" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Image Grid.Column="0" Grid.Row="1" Source="tablellena.png" WidthRequest="70" />
+                <Label Text="{Binding Mesasocupadas}" FontSize="32"  Grid.Row="1" TextColor="White" 
+                               FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <Label Grid.Row="0" Grid.Column="1" Text="Libres"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Image Grid.Column="1" Grid.Row="1" Source="tablevacia.png" />
+                <Label Text="{Binding Mesaslibres}" Grid.Column="1" FontSize="32" Grid.Row="1" 
+                               TextColor="White" FontAttributes="Bold" 
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

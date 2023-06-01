@@ -1,0 +1,125 @@
+﻿using SQLite;
+using System;
+
+namespace PedidosRestaurante.Models
+{
+    public class Xxxx3rosModel
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Idxxxx3ros { get; set; }
+        public string Tronit { get; set; }
+        public string Tronombre { get; set; }
+        public string Trozona { get; set; }
+        public string Trociudad { get; set; }
+        public string Troactivi { get; set; }
+        public string Troserie { get; set; }
+        public string Trotipo { get; set; }
+        public string Troaereo { get; set; }
+        public string Trodirec { get; set; }
+        public string Trotelef { get; set; }
+        public string Trotelfax { get; set; }
+        public string Troemail { get; set; }
+        public string Tronombre2 { get; set; }
+        public string Trovinopo { get; set; }
+        public string Troruta { get; set; }
+        public string Trovended { get; set; }
+        public string Trocrecib { get; set; }
+        public string Troprecib { get; set; }
+        public string Trocxckey { get; set; }
+        public decimal Troflete { get; set; }
+        public decimal Troccvnc { get; set; }
+        public decimal Trocpvnc { get; set; }
+        public decimal Troccplazo { get; set; }
+        public decimal Trondplazo { get; set; }
+        public decimal Tropdplazo { get; set; }
+        public string Troforma { get; set; }
+        public decimal Trodscto1 { get; set; }
+        public decimal Trodscto2 { get; set; }
+        public decimal Tropdsct1 { get; set; }
+        public decimal Tropdsct2 { get; set; }
+        public decimal Trocpcupo { get; set; }
+        public decimal Trocccupo { get; set; }
+        public decimal Troccsaldo { get; set; }
+        public decimal Troccsdovn { get; set; }
+        public decimal Trocpsaldo { get; set; }
+        public decimal Trocpsdovn { get; set; }
+        public decimal Trostatus { get; set; }
+        public decimal Troprecio { get; set; }
+        public decimal Tropretiro { get; set; }
+        public decimal Trocretiro { get; set; }
+        public decimal Troregimen { get; set; }
+        public decimal Troprove { get; set; }
+        public decimal Troclient { get; set; }
+        public decimal Troactivo { get; set; }
+        public decimal Trocontrib { get; set; }
+        public decimal Troretefte { get; set; }
+        public decimal Tromil4 { get; set; }
+        public decimal Trorfuente { get; set; }
+        public decimal Trocree { get; set; }
+        public decimal Troriva { get; set; }
+        public decimal Trotp_3ro { get; set; }
+        public decimal Troica { get; set; }
+        public decimal TroicaVr { get; set; }
+        public string Trofinicia { get; set; }
+        public string Trofnacto { get; set; }
+        public string Trofpretiro { get; set; }
+        public string Trofcretiro { get; set; }
+        public string Trocingr { get; set; }
+        public DateTime Tropingr { get; set; }
+        public DateTime Trofingr { get; set; }
+        public DateTime Trofcontac { get; set; }
+        public DateTime Trofventas { get; set; }
+        public DateTime Trofcompra { get; set; }
+        public DateTime Trofabono { get; set; }
+        public DateTime Trofpago { get; set; }
+        public string Tropais { get; set; }
+        public string Trocity { get; set; }
+        public string Trodato_cc { get; set; }
+        public string Trodato_cp { get; set; }
+        public string Trodato_xx { get; set; }
+        public string Trocelular { get; set; }
+        public string Tronomb_2 { get; set; }
+        public string Troapel_1 { get; set; }
+        public string Troapel_2 { get; set; }
+        public string Trodigito { get; set; }
+        public string Troactivix { get; set; }
+        public string Troocupar { get; set; }
+        public string Trocfactur { get; set; }
+        public string Trovfactur { get; set; }
+        public string Troctrlnn { get; set; }
+        public string Trotfisico { get; set; }
+        public string Trorutadia { get; set; }
+        public string Trofproxim { get; set; }
+        public string Trocobra { get; set; }
+        public string Trodirec2 { get; set; }
+        public string Troestrato { get; set; }
+        public string Trociclo { get; set; }
+        public string Trosucurs { get; set; }
+        public decimal Tronivel { get; set; }
+        public string Tronvnit2 { get; set; }
+        public string Tronvnitxx { get; set; }
+        public DateTime Tronvfecha { get; set; }
+        public decimal Tronvtipo { get; set; }
+        public string Tropagweb { get; set; }
+        public int TrovendeX { get; set; }
+        public string Trovender { get; set; }
+        public int Trocontado { get; set; }
+        public int Tronrorden { get; set; }
+        public DateTime Troforden { get; set; }
+        public string Tronacion { get; set; }
+        public int Tropeps { get; set; }
+        public decimal Trocapital { get; set; }
+        public string Troreg { get; set; }
+        public string Trosexo { get; set; }
+        public int Troedad { get; set; }
+        public int Tromeses { get; set; }
+        public string Troeps { get; set; }
+        public int Trofra_cxc { get; set; }
+        public decimal Trosalario { get; set; }
+        public string Trocargo { get; set; }
+        public string Troenomb { get; set; }
+        public string Trocciu { get; set; }
+        public int Tro_pdf { get; set; }
+
+    }
+}

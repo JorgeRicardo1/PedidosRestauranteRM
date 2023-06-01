@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PedidosRestaurante.Views.PlatoView"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             BackgroundColor="{StaticResource AppBackgroundColor}">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout >
+                <Frame Padding="0" HeightRequest="50" BackgroundColor="{StaticResource FrameColor}" Opacity="0.6">
+                    <Grid>
+                        <Grid.ColumnDefinitions>                   
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>                        
+                        <Label Grid.Column="0"  x:Name="titulo" HorizontalOptions="Center" 
+                               VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <ListView x:Name="Listascombinados"
+                 BackgroundColor="{StaticResource AppBackgroundColor}"
+                  HasUnevenRows = "true"
+                  ItemTapped = "Listascombinados_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout BackgroundColor="{StaticResource Selectorcolor}"  Orientation="Horizontal" Padding="16">
+                                        <Label   Text="{Binding Articulonombre}" FontAttributes="Bold" TextColor="White" FontSize="15" Margin="0,16,0,0"/>                                       
+                                    </StackLayout>
+                                    <StackLayout Margin="10,0,10,0" HeightRequest="200" Orientation="Horizontal"   IsVisible="{Binding IsVisible}" >
+                                        <CollectionView  ItemsSource="{Binding Articuloscombinados}"  >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>                                                   
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width=".5*"/>
+                                                                <ColumnDefinition Width=".3*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <input:CheckBox Text="{Binding Ananomb}" TextColor="White" IsChecked="{Binding Ischecked}" 
+                                                                            Grid.Column="0" 
+                                                                        BindingContext="{Binding .}" 
+                                                                        CheckChanged="CheckBox_CheckChanged"/>
+                                                        <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" Text="{Binding Articant,StringFormat='Cantidad: {0}'}"/>
+                                                    </Grid>                                                                                                      
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button x:Name="BtnGuardar" Grid.Row="0" Clicked="BtnGuardar_Clicked" ImageSource="diskette.png"  BorderColor="Transparent" 
+                    BackgroundColor="Transparent" 
+                     HorizontalOptions="Start" 
+                    WidthRequest="50" HeightRequest="50" Margin="10,0,20,22" 
+                    VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

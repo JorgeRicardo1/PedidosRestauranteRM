@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="PedidosRestaurante.Views.CambioMesaView"
+                       xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit">
+    <StackLayout  Margin="50,50,50,150" >
+        <Frame BackgroundColor="White" CornerRadius="10" 
+                     HeightRequest="600">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="Titulo" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" TextColor="{StaticResource Selectorcolor}" />
+                <BoxView  Grid.Row="0" VerticalOptions="End"  HorizontalOptions="Center" HeightRequest="1" WidthRequest="250" Color="#5b5d68"></BoxView>
+                <input:CheckBox x:Name="Btn_selectall" Text="SELECCIONAR TODOS" TextColor="{StaticResource Selectorcolor}"  Grid.Row="1" 
+                                                                        BindingContext="{Binding .}" 
+                                                                        CheckChanged="Btn_selectall_CheckChanged"/>
+                <BoxView  Grid.Row="1" VerticalOptions="End"  HorizontalOptions="Center" HeightRequest="1" WidthRequest="250" Color="#5b5d68"></BoxView>
+                <CollectionView Grid.Row="2"  x:Name="Platos">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".6*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <input:CheckBox Text="{Binding Plato}" TextColor="Black" IsChecked="{Binding Ischecked}" Grid.Column="0" 
+                                                                        BindingContext="{Binding .}" 
+                                                                        CheckChanged="CheckBox_CheckChanged"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button x:Name="Btn_cancelar" Text="Cancelar" Clicked="Btn_cancelar_Clicked" Grid.Row="3"  HeightRequest="50" WidthRequest="100" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand"/>
+                <Button x:Name="Btn_cambiar" Text="Cambiar" Clicked="Btn_cambiar_Clicked" Grid.Row="3" HeightRequest="50" WidthRequest="100" HorizontalOptions="End" VerticalOptions="EndAndExpand"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</popup:PopupPage>
