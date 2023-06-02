@@ -18,6 +18,7 @@ namespace PedidosRestaurante.ViewsModels
             culture.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
             culture.DateTimeFormat.LongTimePattern = "";
             Thread.CurrentThread.CurrentCulture = culture;
+            string validacionPassword = $"{mac.Substring(mac.Length - 4),4}" + "M0D3L0";
 
             //var connection = Conexion.ObtenerConexion();
             List<EmpresasModel> datos = new List<EmpresasModel>();
@@ -33,14 +34,33 @@ namespace PedidosRestaurante.ViewsModels
                         Nro_mac = reader.GetString("nro_mac"),
                         Activar = reader.GetString("activar"),
                         Modulos = reader.GetString("modulos"),
+                        Id_mac = reader.GetInt32("id_mac")
                     });
                 }
+                connection.Close();
+                connection.Open();
+                new MySqlCommand($"UPDATE `empresas`.`llequipo` SET `activar` = '{validacionPassword}' WHERE (`id_mac` = '{datos[0].Id_mac}');",connection).ExecuteReader();
+                connection.Close();
+
+            }
+            else
+            {
+                connection.Close();
+                connection.Open();
+
+                
+                string query2 = $"INSERT INTO `empresas`.`llequipo` (`empresa`, `nro_mac`, `activar`, `modulos`) VALUES ('{empresa}', '{mac}', '{validacionPassword}', 'M12');";
+                new MySqlCommand(query2, connection).ExecuteReader();
+                
+                connection.Close() ;
+                return null;
             }
             reader.Close();
+            connection.Open();
             new MySqlCommand("UPDATE empresas.llequipo " +
                 "SET maquina ='" + DeviceInfo.Name + "',facceso='" + DateTime.Now + "',eq_notas='M12 02/05/2022'" +
                 " WHERE nro_mac='" + mac + "';", connection).ExecuteNonQuery();
-            //connection.Close();
+            connection.Close();
             return new ObservableCollection<EmpresasModel>(datos);
         }
 
