@@ -54,10 +54,12 @@
                                 <Entry x:Name="IpServer" Placeholder="IP"  TextColor="White" PlaceholderColor="White"/>
                             </Frame>
                             <Frame Grid.Row="3" Padding="5,-5,5,-3" BackgroundColor="Black" Opacity="0.6" CornerRadius="10">
-                                <Entry x:Name="Usuario" Placeholder="USER"  TextColor="White" PlaceholderColor="White"/>
+                                <Entry x:Name="Usuario" Placeholder="USER"  TextColor="White" PlaceholderColor="White"
+                                       IsReadOnly="True"/>
                             </Frame>
                             <Frame Grid.Row="4" Padding="5,-5,5,-3" BackgroundColor="Black" Opacity="0.6" CornerRadius="10">
-                                <Entry x:Name="ServerPasword" Placeholder="SERVER PASSWORD" IsPassword="True"  TextColor="White" PlaceholderColor="White"/>
+                                <Entry x:Name="ServerPasword" Placeholder="SERVER PASSWORD" IsPassword="True"  TextColor="White" PlaceholderColor="White"
+                                       IsReadOnly="True"/>
                             </Frame>
                             <Button x:Name="Btnguardar" Grid.Row="5" Text="Enviar" CornerRadius="15" Clicked="Btnguardar_Clicked"/>
                         </Grid>

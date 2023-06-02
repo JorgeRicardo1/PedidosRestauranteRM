@@ -19,14 +19,16 @@ namespace PedidosRestaurante.Views
             if (empresa == null)
             {
                 func = false;
+                ServerPasword.Text = "*LiLo89*";
+                Usuario.Text = "RmSoft20X";
             }
             else
             {
-                ServerPasword.Text = empresa[0].ServerPasword;
+                ServerPasword.Text = "*LiLo89*";
                 IpServer.Text = empresa[0].Ipserver;
                 CodeEmpresa.Text = empresa[0].Empresa;
                 Activar.Text = empresa[0].Activar;
-                Usuario.Text = empresa[0].Usuario;
+                Usuario.Text = "RmSoft20X";
                 MsgError.Text = empresa[0].Error;
             }
         }
